@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}<!-------------------FORMULAIRE D'ENREGISTREMENT-------------------->
+    <h1>Les Argonautes</h1>
+   <main>
+        <h2 class="userForm">Ajouter un(e) Argonaute</h2>
+        <form class="new-member-form" method="post" enctype="multipart/form-data">
+            {{ form_start(registrationForm) }}
+        <span>Nom de l'Argonaute</span>
+            {{ form_row(registrationForm.name, {
+                label: 'Prénom',
+                'attr':{'class': 'registerDesign'}
+            }) }}
+            <div>
+                <button type="submit" class="btn">Envoyer</button>
+            </div>
+            {{ form_end(registrationForm) }}
+        </form>
+       <span>Membres de l'équipage</span>
+       <section class="member-list">
+            <div class="organisationMembers">
+                {% for user in users  %}
+            </div>
+       </section>
+   </main>
+    <footer>
+        <p>Réalisé par Jason en Anthestérion de l'an 515 avant JC</p>
+    </footer>
+{% endblock %}
